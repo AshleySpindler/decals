@@ -49,7 +49,7 @@ def get_decals(nsa=None, bricks=None, s=None):
     """
 
     include_names = [
-        'IAUNAME',
+        'iauname',
         'nsa_id',
         'ra',
         'dec',
@@ -57,7 +57,7 @@ def get_decals(nsa=None, bricks=None, s=None):
 
     if s.new_catalog:
         print('get new catalog')
-        nsa_after_cuts = apply_selection_cuts(nsa)
+        nsa_after_cuts = nsa#apply_selection_cuts(nsa)
         joint_catalog = create_joint_catalog(nsa_after_cuts, bricks, s.nsa_version, run_to=s.run_to)
         joint_catalog = joint_catalog[include_names]
         print('writing new catalog')
