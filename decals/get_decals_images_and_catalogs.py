@@ -58,7 +58,7 @@ def get_decals(nsa=None, bricks=None, s=None):
     if s.new_catalog:
         print('get new catalog')
         nsa_after_cuts = nsa#apply_selection_cuts(nsa)
-        joint_catalog = create_joint_catalog(nsa_after_cuts, bricks, s.nsa_version, run_to=s.run_to)
+        joint_catalog = create_joint_catalog(nsa_after_cuts, bricks, 5, run_to=s.run_to)
         joint_catalog = joint_catalog[include_names]
         print('writing new catalog')
         joint_catalog.write(s.joint_catalog_loc, overwrite=True)
@@ -88,7 +88,7 @@ def main():
     """
 
     # specify setup options
-    new_bricks_table = False  # if DR3+, run this on first use.
+    new_bricks_table = True  # if DR3+, run this on first use.
 
     # Setup tasks generate the 'bricks' data table used later.
     # They need only be completed once after downloading the required files

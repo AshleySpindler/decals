@@ -20,8 +20,8 @@ def get_bricks_loc(catalog_dir, data_release):
 data_release = '5'
 catalog_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/catalogs'
 
-fits_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/fits_native/dr{}'.format(data_release)
-png_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/png_native/dr{}'.format(data_release)
+fits_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/fits/dr{}'.format(data_release)
+png_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/png/dr{}'.format(data_release)
 
 # only needed for dr3+
 brick_coordinates_loc = '{}/survey-bricks.fits'.format(catalog_dir)
