@@ -32,7 +32,7 @@ bricks_loc = get_bricks_loc(catalog_dir, data_release)
 
 gz3d_catalog_loc = '{}/gz3d_metadata.fits'.format(catalog_dir)
 
-joint_catalog_loc = '{}/gz3d_v{}_decals_dr{}.fits'.format(
+joint_catalog_loc = '{}/gz3d_decals_dr{}.fits'.format(
             catalog_dir, data_release)
 
 upload_catalog_loc = '{}/dr{}_gz3d_to_upload.fits'.format(catalog_dir, data_release)

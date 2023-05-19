@@ -104,7 +104,7 @@ def main():
     settings.run_to = None
 
     if settings.new_catalog:
-        nsa = get_nsa_catalog(settings.nsa_catalog_loc)
+        nsa = get_nsa_catalog(settings.gz3d_catalog_loc)
         print('nsa loaded')
         bricks = get_decals_bricks(settings.bricks_loc, settings.data_release)
         print('bricks loaded')
