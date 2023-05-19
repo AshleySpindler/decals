@@ -49,15 +49,10 @@ def get_decals(nsa=None, bricks=None, s=None):
     """
 
     include_names = [
-        'iauname',
+        'IAUNAME',
         'nsa_id',
         'ra',
         'dec',
-        'petrotheta',
-        'petroth50',
-        'petroth90',
-        'z',
-        'nsa_version'
     ]
 
     if s.new_catalog:
@@ -109,7 +104,7 @@ def main():
     settings.run_to = None
 
     if settings.new_catalog:
-        nsa = get_nsa_catalog(settings.nsa_catalog_loc, settings.nsa_version)
+        nsa = get_nsa_catalog(settings.nsa_catalog_loc)
         print('nsa loaded')
         bricks = get_decals_bricks(settings.bricks_loc, settings.data_release)
         print('bricks loaded')
