@@ -6,11 +6,11 @@ import pandas as pd
 from astropy.io import fits
 from astropy.table import Table
 
-from a_download_decals.get_catalogs.get_joint_nsa_decals_catalog import create_joint_catalog, get_nsa_catalog, get_decals_bricks
-from a_download_decals.get_catalogs.selection_cuts import apply_selection_cuts
-from a_download_decals.get_images.download_images_threaded import download_images_multithreaded
-from a_download_decals.setup.join_brick_tables import merge_bricks_catalogs
-import a_download_decals.download_decals_settings as settings
+from get_catalogs.get_joint_nsa_decals_catalog import create_joint_catalog, get_nsa_catalog, get_decals_bricks
+from get_catalogs.selection_cuts import apply_selection_cuts
+from get_images.download_images_threaded import download_images_multithreaded
+from setup.join_brick_tables import merge_bricks_catalogs
+import download_decals_settings as settings
 
 
 def setup_tables(s):
