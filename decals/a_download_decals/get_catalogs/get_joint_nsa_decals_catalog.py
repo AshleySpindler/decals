@@ -12,13 +12,13 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-def get_nsa_catalog(nsa_catalog_loc, nsa_version):
+def get_nsa_catalog(nsa_catalog_loc):
     '''
+    TODO: Change to GZ3D syntax
     Get the loaded NASA-Sloan Atlas galaxy catalog
 
     Args:
         nsa_catalog_loc (str): absolute file path to NSA catalog e.g. [dir]/nsa_v_0_1_2.fits
-        nsa_version (str): version of NSA catalog e.g v0_1_2. Useful to interpret nsa_id column.
 
     Returns:
         (astropy.Table) NASA-Sloan Atlas. Each row is a galaxy in SDSS.
@@ -27,9 +27,8 @@ def get_nsa_catalog(nsa_catalog_loc, nsa_version):
     # Coordinate catalog has uppercase column names. Rename to lowercase match exposure_catalog.
     for colname in nsa.colnames:
         nsa.rename_column(colname, colname.lower())
-    nsa.rename_column('nsaid', 'nsa_id')
+    #nsa.rename_column('nsaid', 'nsa_id')
 
-    nsa['nsa_version'] = nsa_version
 
     return nsa
 
