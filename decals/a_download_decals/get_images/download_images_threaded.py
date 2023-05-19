@@ -71,8 +71,8 @@ def download_images(galaxy,
                     overwrite_fits=False,
                     overwrite_png=False,
                     max_attempts=5,
-                    min_pixelscale=0.1,
-                    png_size=424,
+                    min_pixelscale=0.099,
+                    png_size=525,
                     lazy_checking=False):
     """
     Download a multi-plane FITS image from the DECaLS skyserver
@@ -94,7 +94,7 @@ def download_images(galaxy,
 
     try:
 
-        pixscale = max(min(galaxy['petroth50'] * 0.04, galaxy['petroth90'] * 0.02), min_pixelscale)
+        pixscale = 0.099 # pix scale used for GZ3D
 
         # For convenience
         fits_loc = galaxy['fits_loc']
@@ -228,7 +228,7 @@ def get_download_url(ra, dec, zoomed_pixscale, max_size, data_release, img_forma
         (str): url to download galaxy in requested size/format
     """
     # TODO combine these historical size and zoomed pixscale into a new, meaningful measure. pixscale -> arcsecs
-    historical_size = 424
+    historical_size = 525
     arcsecs = historical_size * zoomed_pixscale
 
     native_pixscale = 0.262
