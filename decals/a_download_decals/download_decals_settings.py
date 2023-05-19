@@ -17,12 +17,11 @@ def get_bricks_loc(catalog_dir, data_release):
     return '{}/{}'.format(catalog_dir, bricks_filename)
 
 
-nsa_version = '1_0_0'
 data_release = '5'
-catalog_dir = '/Volumes/alpha/decals/catalogs'
+catalog_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/catalogs'
 
-fits_dir = '/Volumes/alpha/decals/fits_native/dr{}'.format(data_release)
-png_dir = '/Volumes/alpha/decals/png_native/dr{}'.format(data_release)
+fits_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/fits_native/dr{}'.format(data_release)
+png_dir = '/data/astroml/aspindler/GZ3D/SCRATCH/DECaLS/png_native/dr{}'.format(data_release)
 
 # only needed for dr3+
 brick_coordinates_loc = '{}/survey-bricks.fits'.format(catalog_dir)
@@ -31,9 +30,9 @@ brick_exposures_loc = '{}/survey-bricks-dr5.fits'.format(catalog_dir)
 # if dr3+, brick coordinate-exposure merged catalog will be placed/expected here
 bricks_loc = get_bricks_loc(catalog_dir, data_release)
 
-nsa_catalog_loc = '{}/nsa_v{}.fits'.format(catalog_dir, nsa_version)
+gz3d_catalog_loc = '{}/gz3d_metadata.fits'.format(catalog_dir)
 
-joint_catalog_loc = '{}/nsa_v{}_decals_dr{}.fits'.format(
-            catalog_dir, nsa_version, data_release)
+joint_catalog_loc = '{}/gz3d_v{}_decals_dr{}.fits'.format(
+            catalog_dir, data_release)
 
-upload_catalog_loc = '{}/dr{}_nsa{}_to_upload.fits'.format(catalog_dir, data_release, nsa_version)
+upload_catalog_loc = '{}/dr{}_gz3d_to_upload.fits'.format(catalog_dir, data_release)
